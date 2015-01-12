@@ -1,0 +1,50 @@
+<p>
+  <strong>Child:</strong>
+  <%= "#{@child.name}" %>
+</p>
+
+<p>
+  <strong>Checkpoints:</strong>
+</p>
+
+<ul>
+  <% @checkpoints.each do |checkpoint| %>
+  <li>
+    <%= "#{checkpoint.checkpoint}" %>
+  </li>
+  <% end %>
+</ul>
+
+<div class="form-actions">
+  <h4>Add a checkpoint</h4>
+  <p>Use the form below to add a checkpoint</p>
+</div>
+
+<%= form_for([@child, @checkpoint]) do |f| %>
+
+  <div class="control-group">
+    <%= f.label :checkpoint, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :checkpoint %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+
+
+
+<div>
+<%= link_to 'Delete child', child_path, method: :delete %>
+</div>
+
+
+
+
+
+<div>
+  <%= link_to 'Back', children_path %>
+</div>

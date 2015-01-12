@@ -1,0 +1,14 @@
+
+<h1>ChildChecks</h1>
+
+<p>
+  <%= link_to 'Add a child', new_child_path %>
+</p>
+
+<ul class="unstyled">
+  <% @children.each do |child| %>
+  <li>
+    <%= link_to "#{child.name}", child %>
+  </li>
+  <% end %>
+</ul>

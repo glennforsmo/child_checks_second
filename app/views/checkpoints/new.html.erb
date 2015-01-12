@@ -1,0 +1,19 @@
+<div>
+  <h1>Submit a checkpoint</h1>
+</div>
+
+<% if @checkpoint.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@checkpoint.errors.count, "error") %> prohibited this checkpoint from being added: </h2>
+
+    <ul>
+    <% @checkpoint.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to 'Back', child_path(@child), class: 'btn' %>
+</div>
