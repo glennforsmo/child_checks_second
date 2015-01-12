@@ -23,6 +23,20 @@ class ChildrenController < ApplicationController
     @checkpoints = @child.checkpoints
   end
 
+
+
+
+
+  def edit
+
+    @child = Child.find(params[:id])
+
+  end
+
+
+
+
+
   def destroy
     @child = Child.find(params[:id])
     @child.destroy
