@@ -1,7 +1,7 @@
 <div class="form-actions">
   <h1>Edit a child</h1>
 
-  <p>Use the form below to edit a child</p>
+  <p>Use the form below to edit a child:</p>
 </div>
 
 <%= form_for(@child, html: { class: 'form-horizontal' }) do |f| %>
@@ -32,8 +32,16 @@
     </div>
   </div>
 
+  <br>
+
   <div class="form-actions">
     <%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <%= link_to 'Back', children_path, class: 'btn' %>
   </div>
+
+  <br>
+
+  <div>
+    <%= link_to 'Back', children_path %>
+  </div>
+
 <% end %>

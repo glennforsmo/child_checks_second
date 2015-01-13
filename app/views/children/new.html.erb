@@ -1,10 +1,10 @@
 <div class="form-actions">
   <h1>Add a child</h1>
 
-  <p>Use the form below to add a child</p>
+  <p>Use the form below to add a child:</p>
 </div>
 
-<%= form_for(@child, html: { class: 'form-horizontal' }) do |f| %>
+<%= form_for(@child) do |f| %>
 
   <% if @child.errors.any? %>
     <div id="error_explanation">
@@ -32,8 +32,18 @@
     </div>
   </div>
 
+  <br>
+
   <div class="form-actions">
     <%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <%= link_to 'Back', children_path, class: 'btn' %>
   </div>
+
+  <br>
+
+  <br>
+
+  <div>
+    <%= link_to 'Back', children_path %>
+  </div>
+
 <% end %>
