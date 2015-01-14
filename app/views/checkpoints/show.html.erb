@@ -8,9 +8,21 @@
   <%= "#{@checkpoint.checkpoint}" %>
 </p>
 
+<%= form_for([@child, @checkpoint]) do |f| %>
 
+  <div class="control-group">
+    <%= f.label :checkpoint, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :checkpoint %>
+    </div>
+  </div>
 
+  <br>
 
+  <div class="form-actions">
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>
 
 <br>
 

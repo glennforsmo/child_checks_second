@@ -31,7 +31,7 @@ class ChildrenController < ApplicationController
   def update
     @child = Child.find(params[:id])
     if @child.update(child_params)
-      redirect_to children_path, notice: "The edit was completed!"
+      redirect_to children_path, notice: "The child edit was completed!"
     else
       render :edit
     end

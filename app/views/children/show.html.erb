@@ -11,7 +11,7 @@
   <% @checkpoints.each do |checkpoint| %>
     <li>
       <%= checkpoint.checkpoint %>
-      <%= link_to "Edit", "/children/4/checkpoints/4" %>
+      <%= link_to "Edit", child_checkpoint_path(@child.id, checkpoint.id) %>
       <%= link_to "Delete" %>
     </li>
   <% end %>

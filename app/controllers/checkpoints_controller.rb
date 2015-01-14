@@ -17,6 +17,19 @@ class CheckpointsController < ApplicationController
     end
   end
 
+  def update
+    @child = Child.find(params[:child_id])
+    @checkpoint= Checkpoint.find(params[:id])
+    if @checkpoint.update(checkpoint_params)
+      redirect_to children_path, notice: "The checkpoint edit was completed!"
+    else
+      render :show
+    end
+  end
+
+
+
+
   private
 
   def checkpoint_params
