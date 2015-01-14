@@ -1,5 +1,11 @@
 class CheckpointsController < ApplicationController
 
+  def show
+    @child = Child.find(params[:child_id])
+    @checkpoint = Checkpoint.find(params[:id])
+
+  end
+
   def create
     @child = Child.find(params[:child_id])
     @checkpoint = Checkpoint.new(checkpoint_params)

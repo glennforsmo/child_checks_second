@@ -21,6 +21,7 @@ class ChildrenController < ApplicationController
     @child = Child.find(params[:id])
     @checkpoint = Checkpoint.new
     @checkpoints = @child.checkpoints
+#    @checkpoints = @child.checkpoints.where("DATE(created_at) = ?", Date.today)
   end
 
   def edit

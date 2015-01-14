@@ -10,7 +10,7 @@
 <ul class="unstyled">
   <% @children.each do |child| %>
   <li>
-    <%= link_to "#{child.name}", child %>
+    <%= link_to child.name, child_path(child) %>
   </li>
   <% end %>
 </ul>
