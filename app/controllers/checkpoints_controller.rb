@@ -26,22 +26,12 @@ class CheckpointsController < ApplicationController
     end
   end
 
-
-
-
-
   def destroy
-
     @child = Child.find(params[:child_id])
-    @checkpoint = @child.checkpoints(params[:id])
+    @checkpoint= Checkpoint.find(params[:id])
     @checkpoint.destroy
     redirect_to children_path, notice: "The checkpoint was removed!"
-
   end
-
-
-
-
 
   private
 

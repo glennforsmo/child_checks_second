@@ -12,7 +12,7 @@
     <li>
       <%= checkpoint.checkpoint %>
       <%= link_to "Edit", child_checkpoint_path(@child.id, checkpoint.id) %>
-      <%= link_to "Delete" %>
+      <%= link_to "Delete", child_checkpoint_path(@child.id, checkpoint.id), method: :delete %>
     </li>
   <% end %>
 </ul>

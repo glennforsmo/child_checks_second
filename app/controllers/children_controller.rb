@@ -1,7 +1,7 @@
 class ChildrenController < ApplicationController
 
   def index
-    @children = Child.all
+    @children = Child.all.order(age: :asc)
   end
 
   def new
@@ -20,8 +20,8 @@ class ChildrenController < ApplicationController
   def show
     @child = Child.find(params[:id])
     @checkpoint = Checkpoint.new
-    @checkpoints = @child.checkpoints
-#    @checkpoints = @child.checkpoints.where("DATE(created_at) = ?", Date.today)
+#    @checkpoints = @child.checkpoints
+    @checkpoints = @child.checkpoints.where("DATE(created_at) = ?", Date.today)
   end
 
   def edit
