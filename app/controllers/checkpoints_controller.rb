@@ -3,7 +3,6 @@ class CheckpointsController < ApplicationController
   def show
     @child = Child.find(params[:child_id])
     @checkpoint = Checkpoint.find(params[:id])
-
   end
 
   def create
@@ -21,11 +20,25 @@ class CheckpointsController < ApplicationController
     @child = Child.find(params[:child_id])
     @checkpoint= Checkpoint.find(params[:id])
     if @checkpoint.update(checkpoint_params)
-      redirect_to children_path, notice: "The checkpoint edit was completed!"
+      redirect_to child_path(@child), notice: "The checkpoint edit was completed!"
     else
       render :show
     end
   end
+
+
+
+
+
+  def destroy
+
+    @child = Child.find(params[:child_id])
+    @checkpoint = @child.checkpoints(params[:id])
+    @checkpoint.destroy
+    redirect_to children_path, notice: "The checkpoint was removed!"
+
+  end
+
 
 
 
